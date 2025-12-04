@@ -5,13 +5,15 @@ public:
         stack<int>st;
         int j=0;
         for(int i=1;i<=n&&j<target.size();i++){
-            st.push(i);
             if(i==target[j]){
+                st.push(i);
                 v.push_back("Push");
                 j++;
             }
             else{
+                st.push(i);
                 v.push_back("Push");
+                st.pop();
                 v.push_back("Pop");
             }
         }
